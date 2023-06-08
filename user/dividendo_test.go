@@ -10,19 +10,18 @@ func TestDividendo(t *testing.T) {
 	numerador := 10
 	denominador := 10
 	expected := 1
-	valor := user.Dividendo(numerador, denominador)
+	_, valor := user.Division{Numerador: numerador, Denominador: denominador}.Dividendo()
 	if valor != expected {
-		t.Errorf("Se espera %f, y se obtuvo %f", expected, valor)
+		t.Errorf("Se espera %d, y se obtuvo %d", expected, valor)
 	}
-
 }
 
-func (D Division) Dividendo() (Frase, int) {
-
-	if D.denominador == 0 {
-		return frase1, 0
-	} else {
-		return Frase{}, D.nominador / D.denominador
+func TestDividendo2(t *testing.T) {
+	numerador := 10
+	denominador := 0
+	expected := user.Frase{Escritura: "no puede dividir entre cero"}
+	frase, _ := user.Division{Numerador: numerador, Denominador: denominador}.Dividendo()
+	if frase != expected {
+		t.Errorf("Se espera '%s', y se obtuvo '%s'", expected.Escritura, frase.Escritura)
 	}
-
 }

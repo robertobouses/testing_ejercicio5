@@ -1,8 +1,8 @@
 package user
 
 type Division struct {
-	numerador   int
-	denominador int
+	Numerador   int
+	Denominador int
 }
 
 type Frase struct {
@@ -11,12 +11,12 @@ type Frase struct {
 
 var frase1 = Frase{Escritura: "no puede dividir entre cero"}
 
-func (D Division) Dividendo() (Frase, int) {
+func (d Division) Dividendo() (Frase, int) {
 
-	if D.denominador == 0 {
+	if d.Denominador == 0 {
 		return frase1, 0
 	} else {
-		return Frase{}, D.numerador / D.denominador
+		return Frase{}, d.Numerador / d.Denominador
 	}
 
 }
