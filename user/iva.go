@@ -1,5 +1,6 @@
-package user_test
+package user
 
-func Iva(base, porcentaje float32) float32 {
+func Iva(base, porcentaje float64) float64 {
 	return base * porcentaje
+
 }
