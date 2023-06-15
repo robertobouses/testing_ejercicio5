@@ -24,4 +24,12 @@ func main() {
 	fmt.Println(res3)
 	fmt.Println(res4)
 
+	slice := []int{1, 2, 3, 4, 5}
+
+	user.PrintSlice(slice, 2)
+	user.PrintSlice(slice, 89)
+
+	user.PrintSlice2(slice, 8)
+	user.PrintSlice2(slice, 2)
+
 }
